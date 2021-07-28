@@ -4,8 +4,8 @@
     "description": "",
     "scripts": {
         "check": "html-validate 'src/pages/*/**/*.njk'",
-        "build": "npx eleventy --config=.eleventy.js",
-        "start": "npx eleventy --config=.eleventy.js --serve --watch"
+        "build": "npx eleventy",
+        "start": "npx eleventy --serve --watch"
     },
     "license": "MIT",
     "dependencies": {

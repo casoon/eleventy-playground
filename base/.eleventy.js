@@ -1,11 +1,8 @@
-const filters = require('./config/filters');
-
 module.exports = function(eleventyConfig) {
 
-    // Filters
-    Object.keys(filters).forEach(name => {
-        eleventyConfig.addFilter(name, filters[name]);
-    });
+    eleventyConfig.addFilter("cssmin", require("./filters/cssmin.js"));
+    eleventyConfig.addFilter("htmlDateString", require("./filters/htmlDateString.js"));
+    eleventyConfig.addFilter("jsmin", require("./filters/jsmin.js"));
 
     /*
         // SSL support localhost
@@ -14,7 +11,7 @@ module.exports = function(eleventyConfig) {
         });
     */
 
-    eleventyConfig.addTransform('htmlmin', filters.htmlmin);
+    eleventyConfig.addTransform('htmlmin', require("./filters/htmlmin.js"));
 
     eleventyConfig.setDataDeepMerge(true);
     eleventyConfig.addPassthroughCopy('src/assets');
