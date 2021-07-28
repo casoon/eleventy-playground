@@ -3,6 +3,10 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addFilter("cssmin", require("./filters/cssmin.js"));
     eleventyConfig.addFilter("htmlDateString", require("./filters/htmlDateString.js"));
     eleventyConfig.addFilter("jsmin", require("./filters/jsmin.js"));
+    eleventyConfig.addTransform('htmlmin', require("./filters/htmlmin.js"));
+    eleventyConfig.addTransform('imagesizes', require("./filters/imgsizes.js"));
+
+    eleventyConfig.addNunjucksAsyncShortcode("convert2webp", require("./filters/convert2webp.js"));
 
     /*
         // SSL support localhost
@@ -11,7 +15,7 @@ module.exports = function(eleventyConfig) {
         });
     */
 
-    eleventyConfig.addTransform('htmlmin', require("./filters/htmlmin.js"));
+
 
     eleventyConfig.setDataDeepMerge(true);
     eleventyConfig.addPassthroughCopy('src/assets');

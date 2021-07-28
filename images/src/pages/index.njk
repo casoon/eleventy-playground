@@ -6,6 +6,8 @@ permalink: /index.html
 {% extends 'layouts/default.njk' %}
 
 {% block main %}
-Index Page
+Example Image converted to webp  with added attributes "with" and "height":
+
+<img src={% convert2webp "./src/assets/images/demo01.jpg" %} alt="Image 01" class="img-fluid" />
 
 {% endblock %}
