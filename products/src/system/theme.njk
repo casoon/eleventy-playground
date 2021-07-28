@@ -1,0 +1,10 @@
+---
+permalink: /assets/css/theme.min.css
+excludeFromSitemap: true
+---
+
+{% set css %}
+    {% include "../assets/css/styles.css" %}
+{% endset %}
+
+{{ css | cssmin | safe }}
